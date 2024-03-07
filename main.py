@@ -12,7 +12,8 @@ def FindPage(url):
         return None
     
 def ExtractText(url):
-    url += '.log'
+    url = f'{url}.log'
+    print(url)
     soup = BeautifulSoup(FindPage(url), 'html.parser')
     return soup.get_text().splitlines()
 
@@ -42,7 +43,7 @@ def getPlayerElo(name, initialised = True):
     return [name, 1000, 0]
 
 def eloDiff(player1, player2, winner):
-    with open('log.txt', 'a') as log :
+    with open('log.txt', 'a', encoding='utf-8') as log :
         log.write(f"{player1[0]},{player1[1]},{player1[2]},{player2[0]},{player2[1]},{player2[2]},")
     e1 = 1/(1+10**((player2[1]-player1[1])/1000))
     e2 = 1/(1+10**((player1[1]-player2[1])/1000))
@@ -64,7 +65,7 @@ def eloDiff(player1, player2, winner):
 def CheckReplays(url) :
     with open('replays.txt', 'r') as file :
         for i in file.readlines() :
-            if i.strip() == url :
+            if i.strip() == url[50:] :
                 return True
     return False 
 
@@ -90,6 +91,6 @@ def UpdateRating(url):
                 i[3] += 1
     rankings.Overwrite()
     with open('replays.txt', 'a') as file :
-        file.write(f"{url}\n")
+        file.write(f"{url[50:]}\n")
     rankings.rankList = []
     return f"{data[0]} : {player1[1]} -> {newElos[0]}\n{data[1]} : {player2[1]} -> {newElos[1]}"
