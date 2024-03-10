@@ -1,6 +1,81 @@
 from bs4 import BeautifulSoup
 import requests
-import rankings
+
+players = []
+
+def GetPlayer(name, create=False) :
+    for player in players :
+        if player.name.lower() == name.lower() :
+            return player
+    if create :
+        return NewPlayer(name)
+
+def UpdateAndGetRankings(minMatches = 15) :
+    rankedPlayers = []
+    unrankedPlayers = []
+    for player in players :
+        if player.matches >= minMatches :
+            rankedPlayers.append(player)
+        else :
+            unrankedPlayers.append(player)
+    rankedPlayers.sort(key = lambda player : player.elo, reverse=True)
+    unrankedPlayers.sort(key = lambda player : player.elo, reverse=True)
+    for i, player in enumerate(rankedPlayers) :
+        player.rank = i+1
+    return rankedPlayers + unrankedPlayers
+        
+
+class Player :
+    def __init__(self, name, elo, matches, wins, losses, rank=None):
+        self.name = name
+        self.elo = int(elo)
+        self.matches = int(matches)
+        self.wins = int(wins)
+        self.losses = int(losses)
+        self.rank = rank
+        players.append(self)
+
+def NewPlayer(name) :    
+    return Player(name, 1000, 0, 0, 0)
+
+def Unserialize(line) :
+    string = line[0:-1].split(',')
+    Player(string[0], string[1], string[2], string[3], string[4], string[5])
+    
+def Serialize(self) :
+    return f"{self.name},{self.elo},{self.matches},{self.wins},{self.losses},{self.rank}"
+
+def Initialize():
+    global players
+    players = []
+    with open('rankings.txt', 'r', encoding='utf-8') as file :
+        for i in file.readlines() :
+            Unserialize(i)
+
+def Overwrite():
+    global players
+    players.sort(key=lambda player : player.elo, reverse=True)
+    open('rankings.txt', 'w').close()
+    with open('rankings.txt', 'w', encoding='utf-8') as file :
+        for player in UpdateAndGetRankings() :
+            file.writelines(f"{Serialize(player)}\n")
+    players = []
+
+class Battle :
+    def __init__(self, players, winner):
+        self.players = players
+        self.winner = winner
+
+def NewElos(battle, k=60) :
+    e1 = 1/(1+10**((battle.players[1].elo-battle.players[0].elo)/1000))
+    e2 = 1/(1+10**((battle.players[0].elo-battle.players[1].elo)/1000))
+    if battle.winner == battle.players[0].name :
+        battle.players[0].elo += int(k*(1-e1))
+        battle.players[1].elo -= int(k*e2)
+    if battle.winner == battle.players[1].name :
+        battle.players[0].elo -= int(k*e1)
+        battle.players[1].elo += int(k*(1-e2))
+    return (battle.players[0].elo, battle.players[1].elo)
 
 def FindPage(url):
     try:
@@ -9,58 +84,23 @@ def FindPage(url):
         return response.text
     except requests.exceptions.RequestException as e:
         print(f"Error fetching webpage content: {e}")
+        Overwrite()
         return None
     
 def ExtractText(url):
     url = f'{url}.log'
-    print(url)
-    soup = BeautifulSoup(FindPage(url), 'html.parser')
+    page = FindPage(url)
+    if page == None :
+        return
+    soup = BeautifulSoup(page, 'html.parser')
     return soup.get_text().splitlines()
 
 def BattleData(text) :
-    player1 = text[0][4:].lower()
-    player2 = text[1][4:].lower()
+    if text == None :
+        return
     for i in text :
         if i[0:5] == '|win|' :
-            winner = i[5:].lower()
-    return (player1, player2, winner)
-
-def addNewPlayer(name):
-    rankings.rankList.append([name.lower(), 1000, 0, 0])
-
-def getPlayerElo(name, initialised = True):
-    if not initialised :
-        rankings.Initialize()
-    for i in rankings.rankList:
-        if i[0] == name :
-            if not initialised :
-                rankings.rankList = []
-            return [name, i[1], i[2]]
-    addNewPlayer(name)
-    if not initialised :
-        rankings.rankList = []
-        return [None, "User not found"]
-    return [name, 1000, 0]
-
-def eloDiff(player1, player2, winner):
-    with open('log.txt', 'a', encoding='utf-8') as log :
-        log.write(f"{player1[0]},{player1[1]},{player1[2]},{player2[0]},{player2[1]},{player2[2]},")
-    e1 = 1/(1+10**((player2[1]-player1[1])/1000))
-    e2 = 1/(1+10**((player1[1]-player2[1])/1000))
-    k = 60
-    if winner == player1[0] :
-        player1[1] += int(k*(1-e1))
-        player2[1] -= int(k*e2)
-    else :
-        player1[1] -= int(k*e1)
-        player2[1] += int(k*(1-e2))
-    if player1[1] < 100 :
-        player1[1] = 100
-    if player2[1] < 100 :
-        player2[1] = 100
-    with open('log.txt', 'a') as log :
-        log.write(f"{player1[1]},{player2[1]}\n")
-    return (player1[1], player2[1])
+            return Battle([GetPlayer(text[0][4:].lower(), create=True), GetPlayer(text[1][4:].lower(), create=True)], i[5:].lower())
 
 def CheckReplays(url) :
     with open('replays.txt', 'r') as file :
@@ -70,27 +110,25 @@ def CheckReplays(url) :
     return False 
 
 def UpdateRating(url):
+    global players
     if CheckReplays(url) :
-        print("Replay has already been updated")
+        return "Replay has already been fetched"
+    Initialize()
+    battle = BattleData(ExtractText(url))
+    if battle == None :
+        players = []
         return
-    rankings.Initialize()
-    data = BattleData(ExtractText(url))
-    player1 = getPlayerElo(data[0])
-    player2 = getPlayerElo(data[1])
-    newElos = eloDiff(getPlayerElo(data[0]), getPlayerElo(data[1]), data[2])
-    for i in rankings.rankList :
-        if i[0] == data[0] :
-            i[1] = newElos[0]
-            i[2] += 1
-            if data[0] == data[2] :
-                i[3] += 1
-        if i[0] == data[1] :
-            i[1] = newElos[1]
-            i[2] += 1
-            if data[1] == data[2] :
-                i[3] += 1
-    rankings.Overwrite()
+    oldElos = [battle.players[0].elo, battle.players[1].elo]
+    newElos = NewElos(battle)
+    for player in players :
+        for j in [0,1] :
+            if player.name == battle.players[j].name :
+                player.matches += 1
+                if player.name == battle.winner :
+                    player.wins += 1
+                else :
+                    player.losses += 1
+    Overwrite()
     with open('replays.txt', 'a') as file :
         file.write(f"{url[50:]}\n")
-    rankings.rankList = []
-    return f"{data[0]} : {player1[1]} -> {newElos[0]}\n{data[1]} : {player2[1]} -> {newElos[1]}"
+    return f"{battle.players[0].name} : {oldElos[0]} -> {newElos[0]}\n{battle.players[1].name} : {oldElos[1]} -> {newElos[1]}"

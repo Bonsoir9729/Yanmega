@@ -1,8 +1,7 @@
 import discord
 import os
 from discord.ext import commands
-from main import UpdateRating, getPlayerElo
-import rankings
+from main import Initialize, UpdateAndGetRankings, GetPlayer, UpdateRating, players
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -13,7 +12,7 @@ replayChannel = 1128031232719073330
 @client.event
 async def on_ready():
     newGames=[]
-    async for i in client.get_channel(replayChannel).history(limit=2000) :
+    async for i in client.get_channel(replayChannel).history(limit=500) :
         if i.created_at.year == 2024 and i.created_at.month == 3 :
             if 'https://replay.pokemonshowdown.com/gen9customgame-' in i.content :
                 newGames.append(ExtractLink(i.content))
@@ -23,29 +22,31 @@ async def on_ready():
 
 @client.event
 async def on_message(message) :
-    if message.author == client.user:
+    global players
+    if message.author == client.user :
         return
-    if message.content == f'{prefix}rankings' :
-        rankings.Initialize()
-        ranks = ['']
-        rank = 1
-        messages = 0
-        for i in rankings.rankList :
-            if i[2] < 10 :
-                ranks[messages] += f'{i[0]} : {i[1]} ({i[2]} games {i[3]}W {i[2]-i[3]}L) (unranked)\n'
-            else :
-                ranks[messages] += f'{rank}. {i[0]} : {i[1]} ({i[2]} games {i[3]}W {i[2]-i[3]}L)\n'
-                rank += 1
-            if len(ranks[messages]) > 1900 :
-                messages += 1
-                ranks.append('')
-        for i in ranks :
-            await message.channel.send(i)
-        rankings.rankList = []
-        return
-    if f"{prefix}showrank" == message.content[0:len(prefix)+8] :
-        await message.channel.send(getPlayerElo(message.content[len(prefix)+9:], initialised=False)[1])
-        return
+    content = message.content.split()
+    match content[0] :
+        case '!rankings' :
+            Initialize()
+            rankings = UpdateAndGetRankings()
+            ranks = ''
+            for i in range(20) :
+                ranks += f"{rankings[i].rank}. {rankings[i].name} : {rankings[i].elo} ({rankings[i].matches}P {rankings[i].wins}W {rankings[i].losses}L)\n"
+            await message.channel.send(ranks)
+            players = []
+        case "!rank" :
+            Initialize()
+            name = ""
+            for i in content[1:] :
+                name += i
+            player = GetPlayer(name)
+            try :
+                await message.channel.send(f"{player.name} : {player.elo}\nrank : {player.rank}")
+            except AttributeError :
+                await message.channel.send("Player not found")
+            finally :
+                players = []
     if message.channel.id != replayChannel :
         return
     if 'https://replay.pokemonshowdown.com/gen9customgame-' in message.content :
