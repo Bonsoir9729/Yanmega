@@ -39,8 +39,9 @@ async def on_message(message) :
             Initialize()
             name = ""
             for i in content[1:] :
-                name += i
-            player = GetPlayer(name)
+                name += i + " "
+            print(name)
+            player = GetPlayer(name[0:-1])
             try :
                 await message.channel.send(f"{player.name} : {player.elo}\nrank : {player.rank}")
             except AttributeError :
