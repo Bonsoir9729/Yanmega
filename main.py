@@ -98,9 +98,13 @@ def ExtractText(url):
 def BattleData(text) :
     if text == None :
         return
+    p = []
     for i in text :
+        if i[0:3] == '|j|' :
+            p.append(GetPlayer(i[4:].lower(), create=True))
         if i[0:5] == '|win|' :
-            return Battle([GetPlayer(text[0][4:].lower(), create=True), GetPlayer(text[1][4:].lower(), create=True)], i[5:].lower())
+            return Battle(p, i[5:].lower())
+
 
 def CheckReplays(url) :
     with open('replays.txt', 'r') as file :

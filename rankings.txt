@@ -1,199 +1,47 @@
-areallyshiftyguy,1484,78,56,22,1
-chickenburger2,1425,74,45,29,2
-sammyc304,1345,17,15,2,3
-mrfm,1332,30,25,5,4
-gcgoat,1326,66,42,24,5
-terribleplayer19,1308,121,74,47,6
-typokefan,1283,35,28,7,7
-hunterzinfected,1256,19,15,4,8
-portobellomushroom,1254,42,27,15,9
-carnivore05,1210,17,13,4,10
-flatziswashed ⚝彡,1210,31,21,10,11
-dacruize,1203,30,20,10,12
-msousagamer,1179,27,17,10,13
-chemfruit,1163,25,17,8,14
-weights 9119,1146,39,21,18,15
-brigitte498,1137,17,10,7,16
-jayballester,1132,16,11,5,17
-poisany,1132,23,14,9,18
-hematemesis,1126,16,11,5,19
-noexistencia,1124,36,23,13,20
-saltator,1097,23,13,10,21
-typhon1175,1097,84,43,41,22
-despacito14,1063,17,10,7,23
-spore4ever,1062,17,9,8,24
-notmissingnow,1055,22,13,9,25
-leng loi,1053,18,11,7,26
-swagmamale,1028,34,17,17,27
-sxitty,1027,16,8,8,28
-fish1107,1025,15,8,7,29
-geuhdbdhdh,1016,15,8,7,30
-masztt,994,38,18,20,31
-superstrike66,988,16,8,8,32
-notgerald,987,17,8,9,33
-lilylight1234,982,28,13,15,34
-myteamiscope,954,16,7,9,35
-eambplsl,930,20,8,12,36
-insant,929,19,8,11,37
-rabidwhale,926,18,8,10,38
-mai-caulk ismall,917,58,28,30,39
-daepiquejt,890,27,11,16,40
-hot-nihilape,854,18,5,13,41
-jennasis235,812,46,12,34,42
-transfemmegaming,786,52,19,33,43
-btslover_62,775,24,6,18,44
-cosmic raven,736,24,4,20,45
-lishan727,706,18,1,17,46
-peum,1256,13,11,2,None
-washed master,1220,9,8,1,None
-joshtheturtwig,1210,12,10,2,None
-the crimson wooper,1120,13,9,4,None
-erniesbro,1118,8,6,2,None
-adolover25,1115,10,7,3,None
-bennymbs,1109,6,5,1,None
-cliffyb,1085,5,4,1,None
-juacyguac,1083,13,8,5,None
-bnsq,1082,7,5,2,None
-rampage dress,1069,9,6,3,None
-mrtrippysmiles,1061,4,3,1,None
-sluice,1060,2,2,0,None
-piphanii,1058,2,2,0,None
-schmiggly,1058,2,2,0,None
-yunino,1058,13,7,6,None
-shaddeej,1057,2,2,0,None
-slaking princess,1057,4,3,1,None
-dalancaster,1057,6,4,2,None
-thundergamespt5,1055,4,3,1,None
-sirtom35p,1054,4,3,1,None
-meaterbeater99,1042,7,4,3,None
-mmtaccos,1040,4,2,2,None
-vacuumlettuce68,1035,7,4,3,None
-cantilena,1033,1,1,0,None
-littensalt,1032,1,1,0,None
-tidalwavve,1031,5,3,2,None
-ayycatburger,1031,1,1,0,None
-hiusi guy %◕‿‿◕%,1031,7,4,3,None
-sirpeanutcronch,1030,1,1,0,None
-alphaomega 1509,1030,1,1,0,None
-252spaspecschiyu,1030,1,1,0,None
-guidget,1030,1,1,0,None
-lycandshadow,1029,1,1,0,None
-4r4ch1s,1029,1,1,0,None
-redfeatherz,1028,5,3,2,None
-thundergamespt6,1028,1,1,0,None
-fvila02,1028,1,1,0,None
-shinobi shuckle,1028,1,1,0,None
-woopre,1028,1,1,0,None
-nddlt notmcbruh,1028,1,1,0,None
-green milk enjoyer,1027,1,1,0,None
-whammerist,1026,11,6,5,None
-silici,1026,1,1,0,None
-flatziswashed,1020,12,6,6,None
-nutsh3ll,1015,12,6,6,None
-kipzilla,1015,14,7,7,None
-thepisslizard,1002,11,5,6,None
-fishinmysoup,1002,2,1,1,None
-josephinealibrandi,998,4,2,2,None
-suwueeper,998,2,1,1,None
-on 40 benadryl,998,2,1,1,None
-flufferide,997,2,1,1,None
-mymompoggers,997,2,1,1,None
-charredcheese,995,2,1,1,None
-lebronjamesoff,994,6,3,3,None
-lioxim,994,2,1,1,None
-old mcbruh,991,4,2,2,None
-magnificentmudkip,990,2,1,1,None
-zawaray,980,1,0,1,None
-keboblepopper,978,6,2,4,None
-aiculla,978,1,0,1,None
-dailyyt,978,1,0,1,None
-pez743,978,1,0,1,None
-beepboopheehoo,976,1,0,1,None
-salvthec,976,1,0,1,None
-ough packin heat,976,1,0,1,None
-lischus,975,3,1,2,None
-nonagonguy,975,5,2,3,None
-layazero,975,1,0,1,None
-peepohold,975,1,0,1,None
-connorcatpng,974,1,0,1,None
-sayso9,974,1,0,1,None
-ovalboi,973,1,0,1,None
-oranye,972,1,0,1,None
-berdsecretary,972,1,0,1,None
-bingusae,972,1,0,1,None
-d3cidu3y3,972,1,0,1,None
-cobalt pink,972,1,0,1,None
-stanterhoeve28,972,7,3,4,None
-wajiewajie,972,1,0,1,None
-dantethorn,971,3,1,2,None
-jimsmoke,971,1,0,1,None
-epicevan5,971,1,0,1,None
-weights9119,971,1,0,1,None
-notgrumm,970,3,1,2,None
-finizen kane,970,7,3,4,None
-lord_turtly,970,1,0,1,None
-genericgamer75,969,3,1,2,None
-unitedmarshadow,969,1,0,1,None
-nitetroller,968,3,1,2,None
-thebeanster09,968,1,0,1,None
-harleycupidofcrime,968,1,0,1,None
-scyllea,967,3,1,2,None
-zcarlett_,967,1,0,1,None
-thedj05,966,7,3,4,None
-grizzlyseason,964,1,0,1,None
-eltitoguille,964,3,1,2,None
-lemmanade,953,4,1,3,None
-machampkillz,950,9,3,6,None
-belluno,950,8,3,5,None
-pieguy2119,949,10,3,7,None
-encore ogerpon,948,2,0,2,None
-randaa,947,2,0,2,None
-leo justice,946,2,0,2,None
-bignutta,944,4,1,3,None
-nicelop,944,2,0,2,None
-kwelly15,944,4,1,3,None
-dragonsapian7000,943,2,0,2,None
-dangerleaderlizana,942,2,0,2,None
-ic1cle,941,2,0,2,None
-batson_spl,941,2,0,2,None
-berendjan010,941,2,0,2,None
-yokolol,937,2,0,2,None
-creeperman129poke,937,2,0,2,None
-gwaulah,936,11,4,7,None
-elecp101,935,11,4,7,None
-poiilkmmnol,930,2,0,2,None
-myst66,929,3,0,3,None
-itmie,928,5,1,4,None
-canjicka,928,3,0,3,None
-vididii,927,9,3,6,None
-guyfearowi,925,12,5,7,None
-shlinkle,925,3,0,3,None
-rationingu,924,5,1,4,None
-dadeus,917,3,0,3,None
-hippoboiii,916,3,0,3,None
-pkmorance,914,3,0,3,None
-rightasreine,913,8,2,6,None
-birdi_lol,912,3,0,3,None
-mkap,912,3,0,3,None
-sheepllord29,912,5,1,4,None
-sunnsetti,904,13,4,9,None
-cowboyoctopus,902,9,2,7,None
-gourdy,902,8,2,6,None
-xungo,900,12,4,8,None
-turtleleo77,900,12,4,8,None
-bobobib1,898,4,0,4,None
-lancey2foux,897,8,2,6,None
-crystalboiii,895,4,0,4,None
-beartoothex,890,8,2,6,None
-tjamesbasketball,885,5,0,5,None
-ideanoexist,881,11,3,8,None
-kwesty,879,7,1,6,None
-reeeeefrik,860,10,2,8,None
-heaver,856,11,2,9,None
-ziggy riggy doom,855,11,2,9,None
-gamijami,833,9,1,8,None
-sintnikolaas,828,11,1,10,None
-iamold,807,12,2,10,None
-lpt2468,798,14,2,12,None
-aigisbuster,787,11,1,10,None
-mustang9565,782,9,0,9,None
+terribleplayer19,1190,36,24,12,1
+chickenburger2,1185,19,14,5,2
+portobellomushroom,1208,10,9,1,None
+areallyshiftyguy,1152,7,6,1,None
+hunterzinfected,1133,7,6,1,None
+msousagamer,1112,12,8,4,None
+swagmamale,1086,3,3,0,None
+carnivore05,1084,5,4,1,None
+sxitty,1066,2,2,0,None
+typhon1175,1061,7,4,3,None
+bingusae,1033,3,2,1,None
+jayballester,1031,1,1,0,None
+afsladder,1030,1,1,0,None
+dacruize,1030,3,2,1,None
+foodster,1029,3,2,1,None
+dznutskong,1027,1,1,0,None
+tryingtolearnstall,1025,7,4,3,None
+belluno,1002,8,4,4,None
+masztt,1002,4,2,2,None
+rationingu,998,2,1,1,None
+lilylight1234,993,5,2,3,None
+myteamiscope,976,3,1,2,None
+josephinealibrandi,975,1,0,1,None
+turtleleo77,974,3,1,2,None
+the crimson wooper,973,10,4,6,None
+flatziswashed,972,1,0,1,None
+bitesizing,971,1,0,1,None
+juacyguac,971,1,0,1,None
+thundergamespt5,970,3,1,2,None
+hiusi guy %◕‿‿◕%,970,5,2,3,None
+imrusty_atpokegame,970,1,0,1,None
+theruffletkid,970,1,0,1,None
+jellyfisk,966,10,4,6,None
+seuif,951,2,0,2,None
+washed master,948,8,3,5,None
+notgerald,945,2,0,2,None
+gcgoat,945,4,1,3,None
+mushroomcloud,944,2,0,2,None
+rabidwhale,940,2,0,2,None
+azzleyoutube,939,4,1,3,None
+poisany,930,3,0,3,None
+stellarorchid,923,3,0,3,None
+mosstardust,914,3,0,3,None
+alphaomega 1509,906,4,0,4,None
+flatziswashed ⚝彡,903,6,1,5,None
+flameorbjolt,846,6,0,6,None
+aigisbuster,831,9,1,8,None

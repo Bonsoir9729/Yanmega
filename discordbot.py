@@ -13,7 +13,7 @@ replayChannel = 1128031232719073330
 async def on_ready():
     newGames=[]
     async for i in client.get_channel(replayChannel).history(limit=500) :
-        if i.created_at.year == 2024 and i.created_at.month == 3 :
+        if i.created_at.year == 2024 and i.created_at.month == 4 :
             if 'https://replay.pokemonshowdown.com/gen9customgame-' in i.content :
                 newGames.append(ExtractLink(i.content))
     for i in reversed(newGames) :
